@@ -1,10 +1,11 @@
-const removeFromArray = function(list, target) {
-let targetIndex = list.indexOf(target);    
-if (target !== -1){
-let newArray = list.splice(targetIndex, 1);
+const removeFromArray = function(list, ...args) {
+let newArray = [];
+list.forEach((item) =>  {
+    if(!args.includes(item)){
+        newArray.push(item)
+    }
+});
 return newArray;
-}   
-return list;
 };
 
 // Do not edit below this line
